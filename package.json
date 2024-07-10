@@ -1,0 +1,45 @@
+{
+	"name": "next",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"analyze": "ANALYZE=true next build",
+		"format": "run-s format.*",
+		"format.biome": "biome check --write .",
+		"format.eslint": "eslint --ext ts,tsx,js,jsx --fix .",
+		"check": "run-p check.*",
+		"check.biome": "biome check .",
+		"check.eslint": "eslint --ext ts,tsx,js,jsx .",
+		"check.tsc": "tsc --project tsconfig.test.json",
+		"check.vitest": "vitest run",
+		"test": "vitest"
+	},
+	"dependencies": {
+		"clsx": "^2.1.1",
+		"next": "^14.2.4",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"tailwindcss": "^3.4.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.3",
+		"@next/bundle-analyzer": "^14.2.4",
+		"@types/node": "^20.14.10",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@typescript-eslint/parser": "^7.16.0",
+		"autoprefixer": "^10.4.19",
+		"cssnano": "^7.0.4",
+		"eslint": "^8.56.0",
+		"eslint-plugin-tailwindcss": "^3.17.4",
+		"lefthook": "^1.7.1",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.39",
+		"typescript": "^5.5.3",
+		"vite": "^5.3.3",
+		"vite-tsconfig-paths": "^4.3.2",
+		"vitest": "^2.0.1"
+	}
+}
