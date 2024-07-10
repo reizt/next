@@ -10,7 +10,7 @@ export function Button({ children, className }: Props): JSX.Element {
 		<button
 			type="button"
 			className={clsx(
-				'h-44 content-center rounded-10 border-2 border-gray-ee bg-gray-f3 px-12 text-center text-16 leading-19 text-background duration-mouse hover:bg-gray-ee aria-disabled:pointer-events-none aria-disabled:text-gray-cc',
+				'h-44 content-center rounded-10 border-2 border-gray-ee bg-foreground px-12 text-center text-16 leading-19 text-background duration-mouse hover:bg-gray-ee aria-disabled:pointer-events-none aria-disabled:text-gray-cc',
 				className,
 			)}
 		>
