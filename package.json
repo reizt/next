@@ -4,6 +4,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
+		"postinstall": "lefthook install",
 		"dev": "next dev",
 		"dev.catalog": "storybook dev -p 6006",
 		"build": "next build",
