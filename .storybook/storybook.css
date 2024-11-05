@@ -1,15 +1,15 @@
 body {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(0deg, transparent calc(100% - 1px), #e3e3e3 calc(100% - 1px)),
-    linear-gradient(90deg, transparent calc(100% - 1px), #e3e3e3 calc(100% - 1px));
-  background-size: 1.6rem 1.6rem;
-  background-repeat: repeat;
-  background-position: center center;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-image: linear-gradient(0deg, transparent calc(100% - 1px), #e3e3e3 calc(100% - 1px)),
+		linear-gradient(90deg, transparent calc(100% - 1px), #e3e3e3 calc(100% - 1px));
+	background-size: 1.6rem 1.6rem;
+	background-repeat: repeat;
+	background-position: center center;
 }
 
-html[data-mode='dark'] body {
-  background-image: linear-gradient(0deg, transparent calc(100% - 1px), #2e2e2e calc(100% - 1px)),
-    linear-gradient(90deg, transparent calc(100% - 1px), #2e2e2e calc(100%- 1px));
+html[data-mode="dark"] body {
+	background-image: linear-gradient(0deg, transparent calc(100% - 1px), #2e2e2e calc(100% - 1px)),
+		linear-gradient(90deg, transparent calc(100% - 1px), #2e2e2e calc(100% - 1px));
 }

@@ -14,7 +14,7 @@
 	--c-gray-77: 119 119 119;
 	--c-gray-55: 85 85 85;
 }
-html[data-mode='dark'] {
+html[data-mode="dark"] {
 	--c-foreground: 0 0 0;
 	--c-background: 255 255 255;
 	--c-gray-f3: 50 50 50;
@@ -37,9 +37,9 @@ html[data-mode='dark'] {
 :root {
 	font-size: 50%;
 	font-weight: 500;
-	font-family: 'Montserrat', 'Werp Sans JP', sans-serif;
+	font-family: "Montserrat", "Werp Sans JP", sans-serif;
 }
-html[data-mode='dark'] {
+html[data-mode="dark"] {
 	color-scheme: dark;
 }
 body {
@@ -47,10 +47,10 @@ body {
 	padding: 0;
 }
 
-input[type='search'] {
+input[type="search"] {
 	appearance: none;
 }
-input[type='search']::-webkit-search-decoration {
+input[type="search"]::-webkit-search-decoration {
 	display: none;
 }
 .flex > :not(.grow) {
