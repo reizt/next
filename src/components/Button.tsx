@@ -5,7 +5,7 @@ type Props = {
 	className?: string;
 };
 
-export function Button({ children, className }: Props): JSX.Element {
+export function Button({ children, className }: Props) {
 	return (
 		<button
 			type="button"
