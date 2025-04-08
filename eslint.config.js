@@ -1,28 +1,40 @@
-import js from '@eslint/js';
+import typescript from '@typescript-eslint/eslint-plugin';
+import typescriptParser from '@typescript-eslint/parser';
+import react from 'eslint-plugin-react';
 import tailwindcss from 'eslint-plugin-tailwindcss';
-import globals from 'globals';
-import typescriptEslint from 'typescript-eslint';
+import { localPlugin } from './eslint-local.js';
 
+/** @type {import('eslint').Linter.Config} */
 export default [
 	{
-		ignores: ['**/tmp/**', '**/.next/**', '**/storybook-static/**'],
-	},
-	js.configs.recommended,
-	...typescriptEslint.configs.recommended,
-	{
+		name: 'ts+tsx',
+		files: ['**/*.ts', '**/*.tsx'],
 		plugins: {
-			tailwindcss,
+			typescript,
+			local: localPlugin,
 		},
 		languageOptions: {
-			ecmaVersion: 2022,
-			sourceType: 'module',
-			globals: {
-				...globals.browser,
-				...globals.node,
+			parser: typescriptParser,
+			parserOptions: {
+				project: './tsconfig.json',
 			},
 		},
 		rules: {
-			'@typescript-eslint/no-explicit-any': 'off',
+			'no-shadow': 'error',
+			'local/no-restricted-import': 'error',
+			'typescript/no-unnecessary-condition': 'error',
+		},
+	},
+	{
+		name: 'tsx',
+		files: ['**/*.tsx'],
+		plugins: {
+			react,
+			tailwindcss,
+		},
+		rules: {
+			...tailwindcss.configs.recommended.rules,
+			'react/self-closing-comp': 'error',
 			'tailwindcss/classnames-order': 'warn',
 			'tailwindcss/enforces-negative-arbitrary-values': 'warn',
 			'tailwindcss/no-custom-classname': [

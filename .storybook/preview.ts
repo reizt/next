@@ -1,7 +1,8 @@
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
 
-import '../src/globals.css';
+// eslint-disable-next-line local/no-restricted-import
+import '../src/app/globals.css';
 import './storybook.css';
 
 export default {
