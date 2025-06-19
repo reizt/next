@@ -6,26 +6,26 @@ import '../src/app/globals.css';
 import './storybook.css';
 
 export default {
-	decorators: [
-		withThemeByDataAttribute({
-			themes: {
-				light: 'light',
-				dark: 'dark',
-			},
-			defaultTheme: 'light',
-			attributeName: 'data-mode',
-		}),
-	],
-	parameters: {
-		controls: {
-			expanded: true,
-			matchers: {
-				color: /(background|color)$/i,
-				date: /Date$/,
-			},
-		},
-		nextjs: {
-			appDirectory: true,
-		},
-	},
+  decorators: [
+    withThemeByDataAttribute({
+      themes: {
+        light: 'light',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+      attributeName: 'data-mode',
+    }),
+  ],
+  parameters: {
+    controls: {
+      expanded: true,
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+    },
+    nextjs: {
+      appDirectory: true,
+    },
+  },
 } as Preview;
