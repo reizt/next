@@ -1,8 +1,21 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "files": {
-    "includes": ["**/*", "!**/node_modules", "!**/.next", "!**/storybook-static", "!**/tmp"]
+    "includes": [
+      "**/*.json",
+      "**/*.jsonc",
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.cjs",
+      "**/*.mjs",
+      "!**/node_modules",
+      "!**/.next",
+      "!**/.vercel",
+      "!**/tmp",
+      "!**/storybook-static",
+      "!**/migrations"
+    ]
   },
   "formatter": {
     "indentStyle": "space",
@@ -19,12 +32,13 @@
       "style": {
         "noDefaultExport": "off",
         "useNamingConvention": "off",
-        "noNamespace": "off",
-        "noParameterProperties": "off",
-        "useBlockStatements": "off",
         "noNonNullAssertion": "off",
+        "noParameterAssign": "off",
+        "noParameterProperties": "off",
+        "noNamespace": "off",
         "useFilenamingConvention": "off",
-        "noParameterAssign": "error",
+        "useBlockStatements": "off",
+        "noImplicitBoolean": "off",
         "useAsConstAssertion": "error",
         "useDefaultParameterLast": "error",
         "useEnumInitializers": "error",
@@ -35,26 +49,38 @@
         "noInferrableTypes": "error",
         "noUselessElse": "error"
       },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      },
+      "complexity": {
+        "noBannedTypes": "off",
+        "noExcessiveCognitiveComplexity": "off"
+      },
       "performance": {
         "noBarrelFile": "off",
-        "noReExportAll": "off"
+        "noReExportAll": "off",
+        "useTopLevelRegex": "off",
+        "noNamespaceImport": "off",
+        "noImgElement": "off"
       },
       "correctness": {
         "noUndeclaredVariables": "off",
-        "noUnusedVariables": "off",
         "noNodejsModules": "off",
-        "useImportExtensions": "off"
+        "noEmptyPattern": "off",
+        "noUnusedVariables": "off",
+        "useImportExtensions": "off",
+        "noUnusedFunctionParameters": "off"
       },
       "suspicious": {
         "useAwait": "off",
         "noExplicitAny": "off",
         "noEmptyBlockStatements": "off",
+        "noConfusingVoidType": "off",
         "noReactSpecificProps": "off",
-        "noConsole": { "level": "off", "options": { "allow": ["log"] } }
+        "noConsole": "off"
       },
-      "complexity": {
-        "noBannedTypes": "off",
-        "noExcessiveCognitiveComplexity": "off"
+      "nursery": {
+        "useSortedClasses": "off"
       }
     }
   }

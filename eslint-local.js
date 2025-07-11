@@ -1,9 +1,11 @@
 const likeParent = /^\.\.\//;
 const likeSharedParent = /^(\.\.\/){1,}@\w+/;
+const likeParentPrivate = /^(\.\.\/).*\/_\w+$/;
 const isValidImport = (value) => {
   const isParent = likeParent.test(value);
   const isSharedParent = likeSharedParent.test(value);
-  return !isParent || isSharedParent;
+  const isParentPrivate = likeParentPrivate.test(value);
+  return !isParent || (isSharedParent && !isParentPrivate);
 };
 
 const noRestrictedImport = {
@@ -32,7 +34,7 @@ const noRestrictedImport = {
   },
 };
 
-export const localPlugin = {
+export default {
   meta: {
     name: 'local',
     version: '0.0.0',

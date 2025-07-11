@@ -1,39 +1,40 @@
-import js from '@eslint/js';
+import eslint from '@eslint/js';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import tailwindcss from 'eslint-plugin-tailwindcss';
-import globals from 'globals';
-import typescriptEslint from 'typescript-eslint';
-import { localPlugin } from './eslint-local.js';
+import tseslint from 'typescript-eslint';
+import local from './eslint-local.js';
 
-export default [
+export default defineConfig([
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
+  globalIgnores([
+    '**/node_modules',
+    '**/tmp',
+    '**/.next',
+    '**/.turbo',
+    '**/.wrangler',
+    '**/.vercel',
+    '**/*.js',
+    '**/*.mjs',
+    '**/*.cjs',
+  ]),
   {
-    ignores: ['**/tmp/**', '**/.next/**', '**/storybook-static/**'],
-  },
-  js.configs.recommended,
-  ...typescriptEslint.configs.recommended,
-  {
+    files: ['./**/*.{ts,tsx}'],
     plugins: {
       tailwindcss,
-      local: localPlugin,
-    },
-    languageOptions: {
-      ecmaVersion: 2022,
-      sourceType: 'module',
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
+      local,
     },
     rules: {
-      'local/no-restricted-import': 'error',
+      'no-empty-pattern': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-namespace': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/enforces-negative-arbitrary-values': 'warn',
-      'tailwindcss/no-custom-classname': [
-        'warn',
-        {
-          whitelist: [],
-        },
-      ],
+      'tailwindcss/no-custom-classname': ['warn', { whitelist: ['uil', 'uil-.*'] }],
+      'local/no-restricted-import': 'error',
     },
   },
-];
+]);
