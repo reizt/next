@@ -7,6 +7,7 @@ const withBundleAnalyzer = analyzer({
 });
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
   turbopack: {
     resolveAlias: {
       '~': path.resolve(__dirname, 'src'),
@@ -15,9 +16,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
   typescript: {
     tsconfigPath: './tsconfig.next.json',

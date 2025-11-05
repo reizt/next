@@ -1,6 +1,6 @@
 import eslint from '@eslint/js';
-import { defineConfig, globalIgnores } from 'eslint/config';
 import tailwindcss from 'eslint-plugin-tailwindcss';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 import local from './eslint-local.js';
 
@@ -33,7 +33,7 @@ export default defineConfig([
       '@typescript-eslint/ban-ts-comment': 'off',
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/enforces-negative-arbitrary-values': 'warn',
-      'tailwindcss/no-custom-classname': ['warn', { whitelist: ['uil', 'uil-.*'] }],
+      'tailwindcss/no-custom-classname': 'warn',
       'local/no-restricted-import': 'error',
     },
   },
