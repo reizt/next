@@ -14,7 +14,8 @@
       "!**/.vercel",
       "!**/tmp",
       "!**/storybook-static",
-      "!**/migrations"
+      "!**/migrations",
+      "!next-env.d.ts"
     ]
   },
   "formatter": {

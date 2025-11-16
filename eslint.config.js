@@ -17,6 +17,7 @@ export default defineConfig([
     '**/*.js',
     '**/*.mjs',
     '**/*.cjs',
+    'next-env.d.ts',
   ]),
   {
     files: ['./**/*.{ts,tsx}'],
